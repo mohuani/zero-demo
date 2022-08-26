@@ -11,25 +11,24 @@ info(
 type (
 	UserInfoReq {
 		UserId   int64  `json:"userId"`
-		Nickname string `json:"nickname"`
 	}
 	UserInfoResp {
-		Flag string `json:"flag"`
-	}
-)
-
-type (
-	UserUpdateReq {
-		UserId int64 `json:"userId"`
-	}
-	UserUpdateResp {
 		UserId   int64  `json:"userId"`
 		Nickname string `json:"nickname"`
 	}
 )
 
+type (
+	UserUpdateReq {
+		UserId   int64  `json:"userId"`
+		Nickname string `json:"nickname"`
+	}
+	UserUpdateResp {
+		Flag bool `json:"flag"`
+	}
+)
+
 @server(
-	jwt: JwtAuth
 	group : usergroup
 	prefix : userprefix
 )

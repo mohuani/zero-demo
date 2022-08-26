@@ -23,8 +23,19 @@ func NewUserUpdateLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserUp
 	}
 }
 
-func (l *UserUpdateLogic) UserUpdate(req *types.UserUpdateReq) (resp *types.UserUpdateResp, err error) {
-	// todo: add your logic here and delete this line
+func (l *UserUpdateLogic) UserUpdate(req *types.UserUpdateReq) (resp *types.UserInfoResp, err error) {
+	m := map[int64]string{
+		1: "张三",
+		2: "李四",
+	}
 
-	return
+	nickname := "unknown"
+
+	if name, ok := m[req.UserId]; ok {
+		nickname = name
+	}
+
+	return &types.UserInfoResp{
+		Flag: nickname,
+	}, nil
 }
