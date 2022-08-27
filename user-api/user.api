@@ -10,7 +10,7 @@ info(
 
 type (
 	UserInfoReq {
-		UserId   int64  `json:"userId"`
+		UserId int64 `json:"userId"`
 	}
 	UserInfoResp {
 		UserId   int64  `json:"userId"`
@@ -30,7 +30,7 @@ type (
 
 @server(
 	group : usergroup
-	prefix : userprefix
+	prefix : userapi/v1
 )
 service user-api {
 	@doc "获取用户信息"

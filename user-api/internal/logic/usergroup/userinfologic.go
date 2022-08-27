@@ -24,7 +24,19 @@ func NewUserInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserInfo
 }
 
 func (l *UserInfoLogic) UserInfo(req *types.UserInfoReq) (resp *types.UserInfoResp, err error) {
-	// todo: add your logic here and delete this line
+	m := map[int64]string{
+		1: "张三",
+		2: "李四",
+	}
 
-	return
+	nickname := "unknown"
+
+	if name, ok := m[req.UserId]; ok {
+		nickname = name
+	}
+
+	return &types.UserInfoResp{
+		UserId:   req.UserId,
+		Nickname: nickname,
+	}, nil
 }

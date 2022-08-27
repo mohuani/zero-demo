@@ -2,19 +2,19 @@
 package types
 
 type UserInfoReq struct {
-	UserId   int64  `json:"userId"`
-	Nickname string `json:"nickname"`
-}
-
-type UserInfoResp struct {
-	Flag string `json:"flag"`
-}
-
-type UserUpdateReq struct {
 	UserId int64 `json:"userId"`
 }
 
-type UserUpdateResp struct {
+type UserInfoResp struct {
 	UserId   int64  `json:"userId"`
 	Nickname string `json:"nickname"`
+}
+
+type UserUpdateReq struct {
+	UserId   int64  `json:"userId"`
+	Nickname string `json:"nickname"`
+}
+
+type UserUpdateResp struct {
+	Flag bool `json:"flag"`
 }
