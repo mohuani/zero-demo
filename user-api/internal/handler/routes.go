@@ -24,6 +24,6 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Handler: usergroup.UserUpdateHandler(serverCtx),
 			},
 		},
-		rest.WithPrefix("/userprefix"),
+		rest.WithPrefix("/userapi/v1"),
 	)
 }
